@@ -1,0 +1,23 @@
+---
+description: WordPress Studio and MCP browser workflow for Brook Katz
+alwaysApply: true
+---
+
+# WordPress Studio & MCP Setup
+
+## Architecture
+
+- **Next.js frontend** (this repo): Fetches content via WordPress REST API
+- **WordPress backend**: CMS for posts and events (run in WordPress Studio locally)
+
+## WordPress Studio
+
+- Import backups: `.tar.gz`, `.zip`, or `.wpress`
+- Set `NEXT_PUBLIC_WORDPRESS_URL` in `.env` to the Studio site URL (e.g. `http://brookkatz.local`)
+- WordPress must expose: `posts`, custom `events` post type, ACF fields (`event_date`, `event_time`, `event_location`)
+
+## MCP Browser Preview
+
+1. Run `npm run dev` before using browser MCP tools
+2. Navigate to `http://localhost:3000` to preview the Next.js frontend
+3. To inspect the CMS, navigate to the WordPress Studio URL (e.g. `http://brookkatz.local/wp-admin`)
