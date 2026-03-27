@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Card from '@/components/Card';
 import EventCard from '@/components/EventCard';
 import BlogPostCard from '@/components/BlogPostCard';
-import HeroParallax from '@/components/HeroParallax';
+import HeroOrganicCanvas from '@/components/HeroOrganicCanvas';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import { getPostsWithFallback, getEventsWithFallback } from '@/lib/wordpress';
 
@@ -60,9 +60,9 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroParallax />
+      <HeroOrganicCanvas />
 
-      <section className="mx-auto max-w-6xl px-6 py-14 md:py-16">
+      <section id="home-content" className="mx-auto max-w-6xl px-6 py-14 md:py-16">
         <div className="flex flex-col gap-8 overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:flex-row md:items-center md:gap-10 md:p-8">
           <div className="relative mx-auto w-full max-w-[280px] shrink-0 overflow-hidden rounded-xl bg-gray-100 md:mx-0 md:max-w-[240px]">
             <div className="relative aspect-[3/4] w-full">

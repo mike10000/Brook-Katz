@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Fraunces } from 'next/font/google';
+import { DM_Sans, Fraunces, Plus_Jakarta_Sans } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import AppShell from '@/components/AppShell';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -14,6 +13,13 @@ const dmSans = DM_Sans({
 const fraunces = Fraunces({
   subsets: ['latin'],
   variable: '--font-fraunces',
+  display: 'swap',
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '600'],
+  variable: '--font-plus-jakarta',
   display: 'swap',
 });
 
@@ -32,13 +38,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${fraunces.variable}`}>
+    <html
+      lang="en"
+      className={`scroll-smooth ${dmSans.variable} ${fraunces.variable} ${plusJakarta.variable}`}
+    >
       <body className="min-h-screen bg-[#faf9f6] font-sans text-gray-800 antialiased">
-        <Suspense fallback={<header className="h-18 bg-gradient-to-br from-primary-dark to-primary" />}>
-          <Header />
+        <Suspense fallback={null}>
+          <AppShell>
+            <main>{children}</main>
+          </AppShell>
         </Suspense>
-        <main>{children}</main>
-        <Footer />
       </body>
     </html>
   );

@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
         display: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        organic: ['var(--font-plus-jakarta)', 'var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
         primary: {
